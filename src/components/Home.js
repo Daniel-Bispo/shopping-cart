@@ -1,13 +1,43 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-import Product from './Product';
+import { bindActionCreators } from 'redux';
 
-import productList from '../products/productList';
+import * as ProductActions from '../store/actions/productActions';
+
+const handleClick = (addToCart, product) => {
+    addToCart(product);
+}
 
 
-const getAllProducts = productList.map(product => <Product prod={product} key={product.id}/>);
+const getAllProducts = (productList, addToCart) => {
+    console.log(productList)
+    return productList.map(product => {
+        return (
+            <div className="row" key={product.id}>
+                <div className="col s12 m7">
+                    <div className="card">
+                        <div className="card-image">
+                            <img src={product.img} alt={product.title} />
+                            <span className="btn-floating halfway-fab waves-effect waves-light teal lighten-2"
+                                onClick={() => handleClick(addToCart, product)}>
+                                <i className="material-icons">add</i>
+                            </span>
+                        </div>
 
-const Home = () => {
+                        <div className="card-content">
+                            <p>{product.title}</p>
+                            <p><b>Preço: R$ {product.price.toFixed(2)}</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+    );
+}
+
+const Home = ({ productList, addToCart }) => {
     return (
         <div className="container">
             <div className="box">
@@ -15,10 +45,18 @@ const Home = () => {
             </div>
 
             <div className="box">
-                {getAllProducts}
+                {getAllProducts(productList, addToCart)}
             </div>
         </div>
     );
 }
 
-export default Home;
+const mapStateToProps = (state) => ({
+    productList: state.productList
+});
+
+
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(ProductActions, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

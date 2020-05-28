@@ -53,7 +53,7 @@ const productList = [
     {
         id: 1008,
         title: 'Jogo de facas',
-        price: 5400.0,
+        price: 1980.00,
         img: product8
     },    
 ];

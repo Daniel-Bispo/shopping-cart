@@ -1,3 +1,7 @@
+body{
+  overflow-y: overlay;
+}
+
 nav{
   background-color: rgb(3, 102, 102);
 }
