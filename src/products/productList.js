@@ -55,7 +55,7 @@ const productList = [
         title: 'Jogo de facas',
         price: 1980.00,
         img: product8
-    },    
+    },
 ];
 
 export default productList;

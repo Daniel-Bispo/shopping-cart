@@ -11,21 +11,20 @@ const handleClick = (addToCart, product) => {
 
 
 const getAllProducts = (productList, addToCart) => {
-    console.log(productList)
     return productList.map(product => {
         return (
-            <div className="row" key={product.id}>
-                <div className="col s12 m7">
-                    <div className="card">
-                        <div className="card-image">
+            <div className='row' key={product.id}>
+                <div className='col s12 m7'>
+                    <div className='card'>
+                        <div className='card-image'>
                             <img src={product.img} alt={product.title} />
-                            <span className="btn-floating halfway-fab waves-effect waves-light teal lighten-2"
+                            <span className='btn-floating halfway-fab waves-effect waves-light teal lighten-2'
                                 onClick={() => handleClick(addToCart, product)}>
-                                <i className="material-icons">add</i>
+                                <i className='material-icons'>add</i>
                             </span>
                         </div>
 
-                        <div className="card-content">
+                        <div className='card-content'>
                             <p>{product.title}</p>
                             <p><b>Preço: R$ {product.price.toFixed(2)}</b></p>
                         </div>
@@ -39,12 +38,12 @@ const getAllProducts = (productList, addToCart) => {
 
 const Home = ({ productList, addToCart }) => {
     return (
-        <div className="container">
-            <div className="box">
-                <h3 className="left">Produtos</h3>
+        <div className='container'>
+            <div className='box'>
+                <h3 className='left'>Produtos</h3>
             </div>
 
-            <div className="box">
+            <div className='box'>
                 {getAllProducts(productList, addToCart)}
             </div>
         </div>

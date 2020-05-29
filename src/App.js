@@ -8,12 +8,12 @@ import Cart from './components/Cart';
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className='App'>
         <Navbar />
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/cart' component={Cart} />
-          </Switch>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/cart' component={Cart} />
+        </Switch>
       </div>
     </BrowserRouter>
   );

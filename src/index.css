@@ -33,17 +33,59 @@ nav{
   font-weight: 500;
   color: #ee6e73;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   
 }
 .collection .collection-item img{
-  width: 150px;
+  width: 100px;
   margin-right: 25px;
-}
-.item-desc{
-  align-self:center;
 }
 
 .card-title{
   font-size: 0.5em;
+}
+
+.item-desc{
+  width: 30%;
+}
+
+.alter-qty{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
+.rem-prod{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+
+.add-remove{
+  display: flex;
+  font-size: 10px;
+}
+
+.unit{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cart-items{
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  color: #ff6a6f;
+  font-weight: bold;
+}
+
+.cart-total{
+  height: 90px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #13b113;
+  font-weight: bold;
 }
